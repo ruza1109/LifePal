@@ -74,6 +74,8 @@
 
 .login-container {
   width: 25%;
+  min-height: 500px;
+  min-width: 320px;
   height: 60%;
   background-color: #ffffff;
   box-shadow: 8px 10px 8px 9px #888888;
@@ -81,36 +83,92 @@
   padding: 0.75rem;
 }
 
-.login-title {
+.login-container .login-title {
   height: 20%;
   background-color: transparent;
   font-size: 2rem;
 }
 
-.login-subtitle {
+.login-container .login-subtitle {
   height: 20%;
   background-color: transparent;
   font-size: 1.25rem;
 }
 
-.login-form {
+.login-container .login-form {
   width: 100%;
   height: 40%;
 }
 
-.login-form input {
+.login-container .login-form input {
   width: 80%;
   padding: 10px;
   color: #336b87;
 }
 
-.login-form input[type=submit] {
+.login-container .login-form input[type=submit] {
   width: 20%;
+}
+
+.login-container .login-error {
+  height: 20%;
 }
 
 @media (max-width: 1280px) {
   .login-container {
     width: 35%;
   }
+}
+
+@-webkit-keyframes loader {
+  0% {
+    background-color: #336b87;
+  }
+
+  50% {
+    background-color: #9FA5AB;
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    background-color: #336b87;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    background-color: #336b87;
+  }
+
+  50% {
+    background-color: #9FA5AB;
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    background-color: #336b87;
+    transform: rotateY(360deg);
+  }
+}
+
+.loader {
+  position: relative;
+  top: 40%;
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  z-index: 9999999;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+  overflow: hidden;
+  background-color: #336b87;
+  -webkit-animation-name: loader;
+          animation-name: loader;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
 }
 
